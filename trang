@@ -1,1 +1,18 @@
+// 1. Tính trừu tượng (Abstraction): Định nghĩa khuôn mẫu cho đối tượng
+abstract class SinhVien {
+    // 2. Tính đóng gói (Encapsulation): Che giấu dữ liệu bằng private
+    private String maSV;
+    private String hoTen;
 
+    public SinhVien(String maSV, String hoTen) {
+        this.maSV = maSV;
+        this.hoTen = hoTen;
+    }
+
+    // Getter & Setter để truy cập dữ liệu an toàn
+    public String getMaSV() { return maSV; }
+    public String getHoTen() { return hoTen; }
+
+    // Phương thức trừu tượng (các lớp con bắt buộc phải cài đặt)
+    public abstract void hienThiThongTin();
+}
