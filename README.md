@@ -1,3 +1,1 @@
-# btlthdt
-Tôi không biết làm
-Hãy chỉ tooiiiii
+Nghỉ đi ko biết làm
