@@ -1,14 +1,19 @@
-// 1. Tính trừu tượng (Abstraction): Định nghĩa khuôn mẫu cho đối tượng abstract class SinhVien { // 2. Tính đóng gói (Encapsulation): Che giấu dữ liệu bằng private private String maSV; private String hoTen;
+// Một lớp con khác thể hiện tính đa hình class SinhVienKinhTe extends SinhVien { private double diemMarketing;
 
-public SinhVien(String maSV, String hoTen) {
-    this.maSV = maSV;
-    this.hoTen = hoTen;
+public SinhVienKinhTe(String maSV, String hoTen, double diemMarketing) {
+    super(maSV, hoTen);
+    this.diemMarketing = diemMarketing;
 }
 
-// Getter & Setter để truy cập dữ liệu an toàn
-public String getMaSV() { return maSV; }
-public String getHoTen() { return hoTen; }
+@Override
+public void hienThiThongTin() {
+    System.out.println("[SV KT] Mã: " + getMaSV() + " | Tên: " + getHoTen() + " | Điểm Marketing: " + diemMarketing);
+}
+}
 
-// Phương thức trừu tượng (các lớp con bắt buộc phải cài đặt)
-public abstract void hienThiThongTin();
+// Lớp chứa hàm main để chạy chương trình public class Main { public static void main(String[] args) { // Khởi tạo các đối tượng SinhVien sv1 = new SinhVienIT("SV01", "Nguyễn Văn A", 8.5); SinhVien sv2 = new SinhVienKinhTe("SV02", "Trần Thị B", 9.0);
+
+    // Gọi phương thức thể hiện tính đa hình
+    sv1.hienThiThongTin();
+    sv2.hienThiThongTin();
 }
