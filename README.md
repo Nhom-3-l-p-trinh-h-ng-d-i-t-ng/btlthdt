@@ -1,1 +1,0 @@
-Nghỉ đi ko biết làm
