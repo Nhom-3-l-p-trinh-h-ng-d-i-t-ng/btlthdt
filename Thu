@@ -1,1 +1,21 @@
-Hi
+// 4. Tính đa hình (Polymorphism): Ghi đè (Override) phương thức của lớp cha
+    @Override
+    public void hienThiThongTin() {
+        System.out.println("[SV IT] Mã: " + getMaSV() + " | Tên: " + getHoTen() + " | Điểm Java: " + diemJava);
+    }
+}
+
+// Một lớp con khác thể hiện tính đa hình
+class SinhVienKinhTe extends SinhVien {
+    private double diemMarketing;
+
+    public SinhVienKinhTe(String maSV, String hoTen, double diemMarketing) {
+        super(maSV, hoTen);
+        this.diemMarketing = diemMarketing;
+    }
+
+    @Override
+    public void hienThiThongTin() {
+        System.out.println("[SV KT] Mã: " + getMaSV() + " | Tên: " + getHoTen() + " | Điểm Marketing: " + diemMarketing);
+    }
+}
